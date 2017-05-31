@@ -1,0 +1,19 @@
+﻿<Window x:Class="PongProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        KeyDown="MainWindow_OnKeyDown"
+        Title="Ping-Pong" Height="503" Width="824" ResizeMode="NoResize">
+    <Canvas Width="800" Height="475" Name="MainCanvas" Background="Black">
+
+        <Rectangle Height="80" Width="20" Fill="#EEEEEE" Canvas.Top="{Binding LeftPadPosition}"/>
+        <Rectangle Height="80" Width="20" Fill="#EEEEEE" Canvas.Top="{Binding RightPadPosition}" Canvas.Left="780"/>
+        <Line X1="400" X2="400" Y2="500" Y1="0" StrokeThickness="2" Stroke="#EEEEEE"/>
+        <Ellipse Width="20" Height="20" Canvas.Left="{Binding BallXPosition}" Canvas.Top="{Binding BallYPosition}" StrokeThickness="0.1" Fill="#EEEEEE"/>
+
+        <Label Canvas.Left="349" Canvas.Top="35" Content="{Binding LeftResult}" Height="auto" FontSize="40" Foreground="#EEEEEE"/>
+        <Label Canvas.Left="421" Canvas.Top="35" Content="{Binding RightResult}" Height="auto" FontSize="40" Foreground="#EEEEEE"/>
+    </Canvas>
+</Window>
